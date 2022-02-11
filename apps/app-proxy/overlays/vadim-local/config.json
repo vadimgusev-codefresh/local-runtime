@@ -1,0 +1,1 @@
+{"appName":"app-proxy","userGivenName":"app-proxy","destNamespace":"vadim-local","destServer":"https://kubernetes.default.svc","srcPath":"apps/app-proxy/overlays/vadim-local","srcRepoURL":"https://github.com/vadimgusev-codefresh/local-runtime.git","srcTargetRevision":"","labels":{"codefresh_io_entity":"component"}}
