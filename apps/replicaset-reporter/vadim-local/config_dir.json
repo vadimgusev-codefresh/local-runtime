@@ -1,0 +1,1 @@
+{"appName":"replicaset-reporter","userGivenName":"replicaset-reporter","destNamespace":"vadim-local","destServer":"https://kubernetes.default.svc","srcPath":"apps/replicaset-reporter/vadim-local/resources","srcRepoURL":"https://github.com/vadimgusev-codefresh/local-runtime.git","srcTargetRevision":"","labels":{"codefresh_io_entity":"component"},"exclude":"","include":""}
