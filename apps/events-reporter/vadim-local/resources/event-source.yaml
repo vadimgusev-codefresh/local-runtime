@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/managed-by: cf
+  name: events-reporter
+  namespace: vadim-local
+spec:
+  eventBusName: codefresh-eventbus
+  generic:
+    events:
+      authSecret:
+        key: token
+        name: argocd-token
+      config: '{}'
+      insecure: true
+      url: argocd-server.vadim-local.svc:80
+  template: {}
+status: {}
