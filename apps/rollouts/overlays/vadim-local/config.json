@@ -1,0 +1,1 @@
+{"appName":"rollouts","userGivenName":"rollouts","destNamespace":"vadim-local","destServer":"https://kubernetes.default.svc","srcPath":"apps/rollouts/overlays/vadim-local","srcRepoURL":"https://github.com/vadimgusev-codefresh/local-runtime.git","srcTargetRevision":"","labels":{"codefresh_io_entity":"component"}}
