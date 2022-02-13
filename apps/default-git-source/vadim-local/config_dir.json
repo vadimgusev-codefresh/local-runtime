@@ -10,5 +10,5 @@
         "codefresh_io_entity": "git-source"
     },
     "exclude": "",
-    "include": "**/*.yaml"
+    "include": ""
 }
