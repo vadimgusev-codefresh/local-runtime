@@ -3,10 +3,11 @@
     "userGivenName": "default-git-source",
     "destNamespace": "vadim-local",
     "destServer": "https://kubernetes.default.svc",
-    "srcPath": "local-dev",
+    "srcPath": "production",
     "srcRepoURL": "https://github.com/vadimgusev-codefresh/codefresh-v2-runtime-production_git-source.git",
     "srcTargetRevision": "",
     "labels": {
         "codefresh_io_entity": "git-source"
-    }
+    },
+    "include": "**/*.yaml"
 }
