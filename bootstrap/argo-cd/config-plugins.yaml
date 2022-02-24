@@ -12,10 +12,12 @@
       env:
       - name: YTT_VERSION
         value: v0.40.0
+      - name: YTT_ARCH
+        value: linux-amd64
       command: [sh, -c]
       args:
         - |
-          wget -O ytt https://github.com/vmware-tanzu/carvel-ytt/releases/download/${YTT_VERSION}/ytt-linux-arm64
+          wget -O ytt https://github.com/vmware-tanzu/carvel-ytt/releases/download/${YTT_VERSION}/ytt-${YTT_ARCH}
           chmod +x ytt
           mv ytt /custom-tools/
       volumeMounts:
