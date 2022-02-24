@@ -30,7 +30,7 @@ configMapGenerator:
       allowConcurrency: false
       lockRepo: false
 patches:
-- path: sops.yaml
+- path: config-plugins.yaml
   target:
     group: apps
     kind: Deployment

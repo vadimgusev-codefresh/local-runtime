@@ -1,0 +1,30 @@
+- op: add
+  path: "/spec/template/spec/volumes/-"
+  value:
+    name: custom-tools
+    emptyDir: {}
+
+- op: add
+  path: "/spec/template/spec/initContainers"
+  value:
+    - name: get-ytt
+      image: alpine:3.8
+      env:
+      - name: YTT_VERSION
+        value: v0.40.0
+      command: [sh, -c]
+      args:
+        - |
+          wget -O ytt https://github.com/vmware-tanzu/carvel-ytt/releases/download/${YTT_VERSION}/ytt-linux-arm64
+          chmod +x ytt
+          mv ytt /custom-tools/
+      volumeMounts:
+        - mountPath: /custom-tools
+          name: custom-tools
+
+- op: add
+  path: "/spec/template/spec/containers/0/volumeMounts/-"
+  value:
+    mountPath: /usr/local/bin/ytt
+    name: custom-tools
+    subPath: ytt
