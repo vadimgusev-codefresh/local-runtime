@@ -67,6 +67,21 @@ spec:
               jsonnet: {}
               recurse: true
             repoURL: ""
+  - git:
+      files:
+        - path: apps/**/codefresh-v2-production/config_ytt.json
+      repoURL: https://github.com/codefresh-io/codefresh-v2-runtime-production.git
+      requeueAfterSeconds: 20
+      revision: ""
+      template:
+        metadata: {}
+        spec:
+          destination: {}
+          project: ""
+          source:
+            plugin:
+              name: ytt-overlay
+            repoURL: ""
   syncPolicy: {}
   template:
     metadata:
