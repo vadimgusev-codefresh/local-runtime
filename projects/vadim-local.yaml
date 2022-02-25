@@ -70,7 +70,7 @@ spec:
   - git:
       files:
       - path: apps/**/vadim-local/config_ytt.json
-      repoURL: https://github.com/codefresh-io/codefresh-v2-runtime-production.git
+      repoURL: https://github.com/codefresh-io/local-runtime.git
       requeueAfterSeconds: 20
       revision: ""
       template:
