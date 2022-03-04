@@ -8,6 +8,26 @@ patches:
     kind: Deployment
     name: argo-server
     version: v1
+
+patchesStrategicMerge:
+- |
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: workflow-controller-configmap
+    data:
+      # Fields reference can be found here: https://argoproj.github.io/argo-workflows/workflow-controller-configmap.yaml
+      workflowDefaults: |
+        spec:
+          serviceAccountName: workflow # IMPORTANT! Provides access to S3 artifact repo
+          ttlStrategy:
+            secondsAfterCompletion: 86400
+            secondsAfterSuccess: 86400
+            secondsAfterFailure: 86400
+          podGC:
+            strategy: OnWorkflowCompletion
+
 resources:
 - ../../base
 - ingress.yaml
+- rbac.yaml
