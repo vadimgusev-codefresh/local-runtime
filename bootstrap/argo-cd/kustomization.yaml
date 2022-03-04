@@ -1,9 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: vadim-local
 configMapGenerator:
-- name: argocd-cm
-  behavior: merge
+- behavior: merge
   literals:
   - |
     repository.credentials=
@@ -14,8 +11,8 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
-- name: argocd-cm
-  behavior: merge
+  name: argocd-cm
+- behavior: merge
   literals:
   - |
     configManagementPlugins=
@@ -29,6 +26,9 @@ configMapGenerator:
             ytt -f .
       allowConcurrency: false
       lockRepo: false
+  name: argocd-cm
+kind: Kustomization
+namespace: vadim-local
 patches:
 - path: config-plugins.yaml
   target:
@@ -37,4 +37,4 @@ patches:
     name: argocd-repo-server
     version: v1
 resources:
-- github.com/codefresh-io/cli-v2/manifests/argo-cd?ref=v0.0.239
+- github.com/codefresh-io/cli-v2/manifests/argo-cd?ref=v0.0.266
